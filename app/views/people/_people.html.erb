@@ -1,6 +1,6 @@
 <%- model_class = Person -%>
-
-<%= paginate @people, remote: true %>
+<% navi = paginate @people, remote: true %>
+<%= navi %>
 
 <table class="table table-striped">
   <thead>
@@ -37,4 +37,4 @@
   </tbody>
 </table>
 
-<%= paginate @people, remote: true %>
+<%= navi %>
