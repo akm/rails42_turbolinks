@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Person.delete_all
+
+open(Rails.root.join("db/people.tsv").to_s) do |f|
+  f.each_line do |line|
+    name, email, prefecture, tel = *line.split("\t", 4)
+    Person.create!(name: name, email: email, prefecture: prefecture, tel: tel)
+  end
+end
