@@ -1,4 +1,7 @@
 <%- model_class = Person -%>
+
+<%= paginate @people, remote: true %>
+
 <table class="table table-striped">
   <thead>
     <tr>
